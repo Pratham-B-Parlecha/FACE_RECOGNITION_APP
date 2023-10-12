@@ -1,4 +1,4 @@
-# `RoboFriend`
+# `FaceRecognition`
 
 ### `npm install`
 to install the required packages and node module to run the project
