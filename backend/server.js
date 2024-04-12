@@ -26,21 +26,7 @@ db.select('*').from('users').then(data => console.log(data))
 const app = express();
 
 app.use(express.json());
-const allowedOrigins = ['https://face-recognition-sigma-one.vercel.app/', 'https://face-recognition-bakend.vercel.app'];
-
-app.use(cors({
-    origin: function(origin, callback){
-      if(!origin) return callback(null, true);
-      if(allowedOrigins.indexOf(origin) === -1){
-        var msg = 'The CORS policy for this site does not ' +
-                  'allow access from the specified Origin.';
-        return callback(new Error(msg), false);
-      }
-      return callback(null, true);
-    },
-    credentials: true, 
-    methods: 'GET, POST, PUT, DELETE'
-}));
+app.use(cors({origin: 'https://face-recognition-sigma-one.vercel.app/', credentials: true, methods: 'GET, POST, PUT, DELETE'}))
 
 app.get('/',(req,res)=>{
     res.json(database.user)
