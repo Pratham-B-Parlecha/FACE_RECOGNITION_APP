@@ -64,7 +64,7 @@ function App() {
   const onButtonSubmit = () =>{
     setImages({...images,imageurl: images.input})
 
-    fetch('https://face-recognition-bakend.vercel.app/imageurl',{
+    fetch('http://localhost:3001/imageurl',{
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -74,7 +74,7 @@ function App() {
     })
     .then(response => response.json())
     .then(result => displayfacebox(calculateFacelocation(result)))
-    fetch('https://face-recognition-bakend.vercel.app/image',{
+    fetch('http://localhost:3001/image',{
         method: 'put',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({

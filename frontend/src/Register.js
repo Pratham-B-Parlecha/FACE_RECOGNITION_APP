@@ -25,7 +25,7 @@ function Register({ onRouteChange , loadUser }) {
         console.log(users);
     
     
-        fetch('https://face-recognition-bakend.vercel.app/register', {
+        fetch('http://localhost:3001/register', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
